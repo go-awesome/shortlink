@@ -1,0 +1,11 @@
+GET http://127.0.0.1:8080 HTTP/1.1
+
+###
+
+POST http://127.0.0.1:8080/api/create HTTP/1.1
+content-type: application/json
+Authorization: "Bearer 1234567812345678123456781234567"
+
+{
+    "url": "https://example.com"
+}
