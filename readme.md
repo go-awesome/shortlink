@@ -1,6 +1,6 @@
 ## About The Project
 
-<p align="center"><a href="https://github.com/go-awesome/shortlink"><img src="https://i.imgur.com/AP40U71.png"></a></p>
+<p align="center"><a href="https://github.com/go-awesome/shortlink"><img src="https://repository-images.githubusercontent.com/368965271/37361600-ba7a-11eb-9f5c-966d7a891ce2"></a></p>
 
 Shortlink App in Golang
 
