@@ -81,6 +81,10 @@ Share your feature request via `issue` tracker.
 - BTC: `1Hp24RtL3o86boapSAD3DtyqF5jdq1rfpM`
 - Star the repository and watch out for new updates and features.
 
+## Do not Forget [ Shortlink App Plan ]
+
+- Checkout the [Shortlink App plan PDF file](https://github.com/go-awesome/shortlink/blob/main/ShortLink%20App%20Plan.pdf) for more understanding about the Repo: 
+
 <!-- LICENSE -->
 ## License
 
