@@ -311,7 +311,7 @@ func RedirectToMeWebsite(db *pogreb.DB, bdb *badger.DB) fiber.Handler {
 						SameSite: "strict",
 					})
 				}
-				helper.PutBDB([]byte(code+"-|-"+getCookie+"-|-"+msgTime), nil, nil, bdb)
+				go helper.PutBDB([]byte(code+"-|-"+getCookie+"-|-"+msgTime), nil, nil, bdb)
 			} else {
 				guid := xid.New()
 				cookieToken := guid.String()
@@ -323,7 +323,7 @@ func RedirectToMeWebsite(db *pogreb.DB, bdb *badger.DB) fiber.Handler {
 					SameSite: "strict",
 				})
 				// when we will be spliting the string with "|", we will have node,code,ip,date
-				helper.PutBDB([]byte(code+"-|-"+cookieToken+"-|-"+msgTime), nil, nil, bdb)
+				go helper.PutBDB([]byte(code+"-|-"+cookieToken+"-|-"+msgTime), nil, nil, bdb)
 			}
 			return c.Redirect(val)
 		}
