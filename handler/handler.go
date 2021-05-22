@@ -2,10 +2,11 @@ package handler
 
 import (
 	"encoding/json"
-	"shortlink/helper"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/go-awesome/shortlink/helper"
 
 	"github.com/akrylysov/pogreb"
 	"github.com/dgraph-io/badger/v3"

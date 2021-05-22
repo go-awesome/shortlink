@@ -5,9 +5,10 @@ import (
 	"os"
 	"os/signal"
 	"runtime"
-	"shortlink/handler"
-	"shortlink/helper"
 	"time"
+
+	"github.com/go-awesome/shortlink/handler"
+	"github.com/go-awesome/shortlink/helper"
 
 	"github.com/akrylysov/pogreb"
 	badger "github.com/dgraph-io/badger/v3"
@@ -61,7 +62,7 @@ func main() {
 		Prefork:               false,
 		CaseSensitive:         false,
 		StrictRouting:         true,
-		DisableStartupMessage: false,
+		DisableStartupMessage: true,
 		ErrorHandler: func(c *fiber.Ctx, err error) error {
 			code := fiber.StatusInternalServerError
 			if e, ok := err.(*fiber.Error); ok {

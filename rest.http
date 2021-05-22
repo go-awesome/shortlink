@@ -46,3 +46,7 @@ Authorization: "Bearer 1234567812345678123456781234567"
     "long": "https://google.com",
     "short": "N1|123ME1oJPK"
 }
+
+### Redirector page
+
+GET http://127.0.0.1:8080/N1|123ME1oJPK HTTP/1.1
