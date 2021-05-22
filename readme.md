@@ -1,12 +1,12 @@
 ## About The Project
 
-<p align="center"><a href="https://github.com/go-awesome/shortlink"><img src="https://i.imgur.com/AP40U71.png"></a></p>
+<p align="center"><a href="https://github.com/go-awesome/shortlink"><img src="https://repository-images.githubusercontent.com/368965271/37361600-ba7a-11eb-9f5c-966d7a891ce2"></a></p>
 
 Shortlink App in Golang
 
 * Multiple Node based Architecture to create and scale at ease
 * Highly performant key-value storage system
-* Centralized Storage option when multiple node created.
+* Centralized Storage option when multiple node created - requires tweaking.
 * **API auth system not built**. Left for using it for your own use case like `JWT` or `paseto`. Self Implement.
 
 Please see the `architecture` file in the repository on option you can use the app. For some minor tweaking may be required.
@@ -34,7 +34,7 @@ Common Steps to Launch:
   ```sh
   go mod tidy
   go mod vendor
-  go run main.go
+  go run main.go OR go build -ldflags "-s -w" main.go && ./main
   ```
 
 ### Must Changeable Variables in `constant.go`:
@@ -63,9 +63,23 @@ APITokenLength  = 32
 >    - /api/fetch [GET]
 >>      Takes `Authorization: Bearer {token}` from Header
 >    - /api/fetch/:short_code_here [GET]
->>      Takes `Authorization: Bearer {token}` from Header
+>>      {short_code_here} in the URL and Takes `Authorization: Bearer {token}` from Header
 
 **Note:** Remember to implement `Auth` system of your own and Replace `APITokenLength` check with your own function.
+
+## Rest API Example:
+
+Please see the `rest.http` file to understand the request type in live details.
+
+## Feature request?
+
+Share your feature request via `issue` tracker.
+
+## Feel like helping out:
+
+- Via Code Contribution (if any / new feature)
+- BTC: `1Hp24RtL3o86boapSAD3DtyqF5jdq1rfpM`
+- Star the repository and watch out for new updates and features.
 
 <!-- LICENSE -->
 ## License
