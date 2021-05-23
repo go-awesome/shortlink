@@ -26,6 +26,7 @@ List of Library and Framework used in building the app:
 ## Getting Started
 
 Just download and run `go run main.go` and you are ready to go.
+To deploy to server, prefer [DigitalOcean](https://m.do.co/c/5b28c38da55b)
 
 ### Steps
 
