@@ -70,7 +70,7 @@ APITokenLength  = 32
 **Note:** Remember to implement `Auth` system of your own and Replace `APITokenLength` check with your own function.
 </details>
 
-Please see the `rest.http` file to understand the request type in live details.
+Please see the [`rest.http`](https://github.com/go-awesome/shortlink/blob/main/rest.http) file to understand the request type in live details.
 
 ### Feature request?
 
