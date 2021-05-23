@@ -86,6 +86,11 @@ Share your feature request via `issue` tracker.
 
 - Checkout the [Shortlink App plan PDF file](https://github.com/go-awesome/shortlink/blob/main/ShortLink%20App%20Plan.pdf) for more understanding about the Repo: 
 
+## Following Use cases:
+
+- Self-Hosted URL tracking.
+- Your URL tracking insights is in-house and not hosted or shared with third party.
+
 <!-- LICENSE -->
 ## License
 
