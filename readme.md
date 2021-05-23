@@ -51,7 +51,8 @@ ShortIDToken    = 7 // Further added from 1st N char of AddFromToken+NodeID: tot
 APITokenLength  = 32
 ```
 
-### Available Routes:
+<details>
+<summary>### Rest API Example:</summary>
 
   1. Short URL redirector: `/:short_code_here`
   2. API Routes:
@@ -67,8 +68,7 @@ APITokenLength  = 32
 >>      {short_code_here} in the URL and Takes `Authorization: Bearer {token}` from Header
 
 **Note:** Remember to implement `Auth` system of your own and Replace `APITokenLength` check with your own function.
-
-### Rest API Example:
+</details>
 
 Please see the `rest.http` file to understand the request type in live details.
 
