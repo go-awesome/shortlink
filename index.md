@@ -1,37 +1,91 @@
-## Welcome to GitHub Pages
+## About The Project
 
-You can use the [editor on GitHub](https://github.com/go-awesome/shortlink/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<p align="center"><a href="https://github.com/go-awesome/shortlink"><img src="https://repository-images.githubusercontent.com/368965271/37361600-ba7a-11eb-9f5c-966d7a891ce2"></a></p>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Shortlink App in Golang
 
-### Markdown
+* Multiple Node based Architecture to create and scale at ease
+* Highly performant key-value storage system
+* Centralized Storage option when multiple node created - requires tweaking.
+* **API auth system not built**. Left for using it for your own use case like `JWT` or `paseto`. Self Implement.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Please see the `architecture` file in the repository on option you can use the app. For some minor tweaking may be required.
 
-```markdown
-Syntax highlighted code block
+### Built With
 
-# Header 1
-## Header 2
-### Header 3
+List of Library and Framework used in building the app:
 
-- Bulleted
-- List
+* [Gofiber](https://gofiber.io)
+* [BadgerDB](https://github.com/dgraph-io/badger)
+* [PogrebDB](https://github.com/akrylysov/pogreb)
+* [hashid](https://github.com/go-awesome/shortlink/blob/main/helper/functions.go#L11)
+* [xid](https://github.com/go-awesome/shortlink/blob/main/handler/handler.go#L13)
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+<!-- GETTING STARTED -->
+## Getting Started
 
-[Link](url) and ![Image](src)
+Just download and run `go run main.go` and you are ready to go.
+
+### Steps
+
+Common Steps to Launch:
+
+  ```sh
+  go mod tidy
+  go mod vendor
+  go run main.go OR go build -ldflags "-s -w" main.go && ./main
+  ```
+
+### Must Changeable Variables in `constant.go`:
+
+```
+Production      = 2 // Please set to 1 if in production.
+Domain          = "https://lin.ks/"
+CookieName      = "lin.ks"
+NodeID          = "N1|" // Increase per node by value as "N2|", "N3|"... for multiple node
+DBFolder        = "/home/ubuntu/go/src/shortlink/db/"
+AddFromToken    = 3 // firt N character to get from token and use it in ShortID
+ShortIDToken    = 7 // Further added from 1st N char of AddFromToken+NodeID: total=12
+APITokenLength  = 32
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Available Routes:
 
-### Jekyll Themes
+  1. Short URL redirector: `/:short_code_here`
+  2. API Routes:
+>    - /api/create [Post]
+>>     Takes `{"url": "https://github.com"}` with `Authorization: Bearer {token}` from Header
+>    - /api/update [Post]
+>>     Takes `{"old": "https://github.com", "new": "https://bitbucket.com", "short": "shortcode"}` with `Authorization: Bearer {token}` from Header
+>    - /api/delete [Post]
+>>     Takes `{ "long": "https://bitbucket.com", "short": "shortcode"}` with `Authorization: Bearer {token}` from Header
+>    - /api/fetch [GET]
+>>      Takes `Authorization: Bearer {token}` from Header
+>    - /api/fetch/:short_code_here [GET]
+>>      {short_code_here} in the URL and Takes `Authorization: Bearer {token}` from Header
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/go-awesome/shortlink/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+**Note:** Remember to implement `Auth` system of your own and Replace `APITokenLength` check with your own function.
 
-### Support or Contact
+## Rest API Example:
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Please see the `rest.http` file to understand the request type in live details.
+
+## Feature request?
+
+Share your feature request via `issue` tracker.
+
+## Feel like helping out:
+
+- Via Code Contribution (if any / new feature)
+- BTC: `1Hp24RtL3o86boapSAD3DtyqF5jdq1rfpM`
+- Star the repository and watch out for new updates and features.
+
+## Do not Forget [ Shortlink App Plan ]
+
+- Checkout the [Shortlink App plan PDF file](https://github.com/go-awesome/shortlink/blob/main/ShortLink%20App%20Plan.pdf) for more understanding about the Repo: 
+
+<!-- LICENSE -->
+## License
+
+Distributed under the Apache License 2.0. See `LICENSE` for more information.
