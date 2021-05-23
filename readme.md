@@ -68,25 +68,25 @@ APITokenLength  = 32
 
 **Note:** Remember to implement `Auth` system of your own and Replace `APITokenLength` check with your own function.
 
-## Rest API Example:
+### Rest API Example:
 
 Please see the `rest.http` file to understand the request type in live details.
 
-## Feature request?
+### Feature request?
 
 Share your feature request via `issue` tracker.
 
-## Feel like helping out:
+### Feel like helping out:
 
 - Via Code Contribution (if any / new feature)
 - BTC: `1Hp24RtL3o86boapSAD3DtyqF5jdq1rfpM`
 - Star the repository and watch out for new updates and features.
 
-## Do not Forget [ Shortlink App Plan ]
+### Do not Forget [ Shortlink App Plan ]
 
 - Checkout the [Shortlink App plan PDF file](https://github.com/go-awesome/shortlink/blob/main/ShortLink%20App%20Plan.pdf) for more understanding about the Repo: 
 
-## Following Use cases:
+### Following Use cases:
 
 - Self-Hosted URL tracking.
 - Your URL tracking insights is in-house and not hosted or shared with third party.
