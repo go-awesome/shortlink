@@ -52,7 +52,7 @@ APITokenLength  = 32
 ```
 
 <details>
-<summary>### Rest API Example:</summary>
+<summary>Click here to see Rest API Example:</summary>
 
   1. Short URL redirector: `/:short_code_here`
   2. API Routes:
