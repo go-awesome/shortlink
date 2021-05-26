@@ -4,10 +4,10 @@ const (
 	Production      = 2 // Please set to 1 if in production.
 	Domain          = "https://lin.ks/"
 	CookieName      = "lin.ks"
-	NodeID          = "N1|" // Increase per node by value as "N2|", "N3|"... for multiple node
-	DBFolder        = "/home/ubuntu/go/src/shortlink/db/"
-	AddFromToken    = 3 // firt N character to get from token and use it in ShortID
-	ShortIDToken    = 7 // Further added from 1st N char of AddFromToken+NodeID: total=12
+	NodeID          = "N1|"                              // Increase per node by value as "N2|", "N3|"... for multiple node
+	DBFolder        = "/home/ubuntu/go/src/shortlink/db" // Without trailing slash at the end.
+	AddFromToken    = 3                                  // firt N character to get from token and use it in ShortID
+	ShortIDToken    = 7                                  // Further added from 1st N char of AddFromToken+NodeID: total=12
 	APITokenLength  = 32
 	BypassLockGuard = false // set to true if DB is read from multiple instance.
 	DB101           = "Failed to Load Read-Heavy database, Please try again!"

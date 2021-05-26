@@ -26,7 +26,7 @@ func main() {
 		return
 	}
 	defer db.Close()
-	opts := badger.DefaultOptions(helper.DBFolder + "badger")
+	opts := badger.DefaultOptions(helper.DBFolder + "/badger")
 	opts.NumVersionsToKeep = 1
 	opts.ReadOnly = false
 
