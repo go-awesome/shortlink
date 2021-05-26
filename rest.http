@@ -6,7 +6,7 @@ GET http://127.0.0.1:8080 HTTP/1.1
 
 POST http://127.0.0.1:8080/api/create HTTP/1.1
 content-type: application/json
-Authorization: "Bearer 1234567812345678123456781234567"
+Authorization: Bearer 12345678123456781234567812345678
 
 {
     "url": "https://example.com"
@@ -16,7 +16,7 @@ Authorization: "Bearer 1234567812345678123456781234567"
 
 POST http://127.0.0.1:8080/api/update HTTP/1.1
 content-type: application/json
-Authorization: "Bearer 1234567812345678123456781234567"
+Authorization: Bearer 12345678123456781234567812345678
 
 {
     "old": "https://example.com",
@@ -28,19 +28,19 @@ Authorization: "Bearer 1234567812345678123456781234567"
 
 GET http://127.0.0.1:8080/api/fetch HTTP/1.1
 content-type: application/json
-Authorization: "Bearer 1234567812345678123456781234567"
+Authorization: Bearer 12345678123456781234567812345678
 
 ### Fetch specific short URL traffic details
 
 GET http://127.0.0.1:8080/api/fetch/N1|123ME1oJPK HTTP/1.1
 content-type: application/json
-Authorization: "Bearer 1234567812345678123456781234567"
+Authorization: Bearer 12345678123456781234567812345678
 
 ### Delete the Short URL
 
 POST http://127.0.0.1:8080/api/delete HTTP/1.1
 content-type: application/json
-Authorization: "Bearer 1234567812345678123456781234567"
+Authorization: Bearer 12345678123456781234567812345678
 
 {
     "long": "https://google.com",
