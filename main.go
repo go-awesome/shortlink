@@ -65,9 +65,9 @@ func main() {
 	}))
 
 	// Close the server and database on interruptor
-	interruptor := make(chan os.Signal, 1)
-	signal.Notify(interruptor, os.Interrupt)
 	go func() {
+		interruptor := make(chan os.Signal, 1)
+		signal.Notify(interruptor, os.Interrupt)
 		for range interruptor {
 			app.Shutdown()
 			db.Close()
