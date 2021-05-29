@@ -42,17 +42,6 @@ func main() {
 	}
 	defer bdb.Close()
 
-	// Close the database on interruptor
-	interruptor := make(chan os.Signal, 1)
-	signal.Notify(interruptor, os.Interrupt)
-	go func() {
-		for range interruptor {
-			db.Close()
-			bdb.Close()
-			os.Exit(1)
-		}
-	}()
-
 	var n int = 1
 
 	// Start the Gofiber APP
@@ -74,6 +63,18 @@ func main() {
 	app.Use(recover.New(), favicon.New(favicon.Config{
 		File: "./favicon.ico",
 	}))
+
+	// Close the server and database on interruptor
+	go func() {
+		interruptor := make(chan os.Signal, 1)
+		signal.Notify(interruptor, os.Interrupt)
+		for range interruptor {
+			app.Shutdown()
+			db.Close()
+			bdb.Close()
+			os.Exit(1)
+		}
+	}()
 
 	/**
 	 * fetch a short ID and redirect
