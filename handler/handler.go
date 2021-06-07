@@ -259,6 +259,17 @@ func DeleteHandler(bdb *badger.DB, db *pogreb.DB) fiber.Handler {
 		if err != nil {
 			return c.JSON(fiber.Map{"error": "true", "message": helper.ErrorPrint(err.Error(), helper.ID107)})
 		}
+		// check the shortID, avoid delete wrong link.
+		if len(post.ShortID) > helper.ShortIDToken {
+			code := strings.Replace(post.ShortID, "%7C", "|", -1)
+			val, err := helper.FindDB([]byte(code), db)
+			if err != nil {
+				return c.JSON(fiber.Map{"error": "true", "message": helper.ErrorPrint(err.Error(), helper.ID107)})
+			}
+			if val != post.URL {
+				return c.JSON(fiber.Map{"error": "true", "message": helper.ErrorPrint(helper.ID107, helper.ID107)})
+			}
+		}
 		// delete short URL
 		err = db.Delete([]byte(post.ShortID))
 		if err != nil {
